@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
 import { useToast } from "@/components/ui/use-toast"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
+//   CardDescription,
+//   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
@@ -88,16 +89,20 @@ const Landing = () => {
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="newActivity">New Activity:</label>
-                    <input
+                    <div className="flex w-full max-w-sm items-center space-x-2">
+                    {/* <label htmlFor="newActivity">New Activity:</label> */}
+                    <Input
+                        placeholder="New Activity"
                         id="newActivity"
                         type="text"
                         value={newActivity}
                         onChange={e => setNewActivity(e.target.value)}
                         required
                     />
+                                   <Button onClick={updateActivity}>Click To Update Activity</Button>
                 </div>
-               <Button onClick={updateActivity}>Click To Update Activity</Button>
+
+               </div>
             </form>
             <Card>
                  <CardHeader>
