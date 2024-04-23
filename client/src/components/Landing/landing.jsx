@@ -20,6 +20,14 @@ import {   Table,
   TableHead,
   TableHeader,
   TableRow,} from "@/components/ui/table";
+  import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 
 const Landing = () => {
@@ -73,22 +81,34 @@ const Landing = () => {
     }
 
     return (
-<div>
-            <h1>Welcome to the Schedule</h1>
+        
+<div >
+        <img
+      src={Image}
+      alt="Background Image"
+      className="absolute inset-0 w-full h-full object-cover z-0 filter blur-sm"
+    />
+    <div className='relative z-10'>
+            <h1 >Weekly Planner</h1>
             <p>Today is {currentDay}.</p>
+            
             <form onSubmit={updateActivity}>
                 <div>
-                    <label htmlFor="daySelect">Select Day To Edit Activity:</label>
-                    <select
-                        id="daySelect"
-                        value={selectedDay}
-                        onChange={e => setSelectedDay(e.target.value)}
-                        required
-                    >
-                        {theDays.map(day => (
-                            <option key={day} value={day}>{day}</option>
-                        ))}
-                    </select>
+                    
+ <DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <Button variant="outline">Edit Activity</Button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>Select Day</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    {theDays.map(day => (
+      <DropdownMenuItem key={day} onSelect={() => setSelectedDay(day)}>
+        {day}
+      </DropdownMenuItem>
+    ))}
+  </DropdownMenuContent>
+</DropdownMenu>
                 </div>
                 <div>
                     <div className="flex w-full max-w-sm items-center space-x-2">
@@ -106,13 +126,10 @@ const Landing = () => {
 
                </div>
             </form>
+            </div>
 <div className="w-[550px] relative">
     <AspectRatio ratio={16 / 16} className="bg-cover bg-center rounded-md">
-    <img
-      src={Image}
-      alt="Background Image"
-      className="absolute inset-0 w-full h-full object-cover"
-    />
+        <div className="absolute inset-0 " />
         <Card className="relative z-10 ">
             <CardHeader>
                 <CardTitle>Weekly Schedule</CardTitle>
