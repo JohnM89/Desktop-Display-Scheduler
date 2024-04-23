@@ -118,17 +118,17 @@ const Landing = () => {
                 <CardTitle>Weekly Schedule</CardTitle>
             </CardHeader>
             <CardContent>
-                <Table>
-                    <TableCaption>Keep It Up!</TableCaption>
+                <Table >
+                    <TableCaption >Keep It Up!</TableCaption>
                     <TableHeader>
                         <TableRow>
                             <TableHead>Day</TableHead>
                             <TableHead>Activity</TableHead>
                         </TableRow>
                     </TableHeader>
-                    <TableBody>
+                    <TableBody >
                         {Object.entries(weeklySchedule).map(([day, activity]) => (
-                            <TableRow key={day}>
+                            <TableRow className="isolate aspect-video w-96 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5" key={day}>
                                 <TableCell>{day}</TableCell>
                                 <TableCell>{activity}</TableCell>
                             </TableRow>
