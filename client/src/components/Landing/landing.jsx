@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
 import { useToast } from "@/components/ui/use-toast"
 import { Button } from "@/components/ui/button"
+import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Input } from "@/components/ui/input"
+import Image from "@/assets/images/flower.jpg"
 import {
   Card,
   CardContent,
@@ -104,30 +106,39 @@ const Landing = () => {
 
                </div>
             </form>
-            <Card>
-                 <CardHeader>
-                    <CardTitle>Weekly Schedule</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-            <Table>
-                <TableCaption>Keep It Up!</TableCaption>
-                <TableHeader>
-                    <TableRow>
-                        <TableHead>Day</TableHead>
-                        <TableHead>Activity</TableHead>
-                    </TableRow>
-                </TableHeader>
-                <TableBody>
-                    {Object.entries(weeklySchedule).map(([day, activity]) => (
-                        <TableRow key={day}>
-                            <TableCell>{day}</TableCell>
-                            <TableCell>{activity}</TableCell>
+<div className="w-[550px] relative">
+    <AspectRatio ratio={16 / 16} className="bg-cover bg-center rounded-md">
+    <img
+      src={Image}
+      alt="Background Image"
+      className="absolute inset-0 w-full h-full object-cover"
+    />
+        <Card className="relative z-10 ">
+            <CardHeader>
+                <CardTitle>Weekly Schedule</CardTitle>
+            </CardHeader>
+            <CardContent>
+                <Table>
+                    <TableCaption>Keep It Up!</TableCaption>
+                    <TableHeader>
+                        <TableRow>
+                            <TableHead>Day</TableHead>
+                            <TableHead>Activity</TableHead>
                         </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
+                    </TableHeader>
+                    <TableBody>
+                        {Object.entries(weeklySchedule).map(([day, activity]) => (
+                            <TableRow key={day}>
+                                <TableCell>{day}</TableCell>
+                                <TableCell>{activity}</TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
             </CardContent>
-            </Card>
+        </Card>
+    </AspectRatio>
+</div>
         </div>
     );
 };
