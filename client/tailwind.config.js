@@ -1,4 +1,3 @@
-
 import tailwindAnimate from 'tailwindcss-animate';
 
 /** @type {import('tailwindcss').Config} */
@@ -20,7 +19,6 @@ export default {
       },
     },
     extend: {
-      // your theme settings...
       colors: {
         // your color settings...
       },
@@ -43,7 +41,10 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      blur: {
+        xs: '1px',  // Custom blur setting
+      },
     },
   },
-  plugins: [tailwindAnimate], 
+  plugins: [tailwindAnimate],
 };

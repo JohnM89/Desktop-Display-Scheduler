@@ -82,8 +82,8 @@ const Landing = () => {
 <div className='flex items-center justify-center min-h-screen p-4 bg-gray-100'>
   <div className='relative max-w-4xl w-full bg-white rounded-lg shadow-lg overflow-hidden'>
     <div className='relative z-10 flex flex-col items-center'>
-      <p className='p-8'>⎧ It`s {currentDay}! ⎫</p>
-      <form onSubmit={updateActivity} className='flex items-center space-x-2 w-full max-w-md'>
+      {/* <p className='p-8'> It`s {currentDay}! </p> */}
+      <form onSubmit={updateActivity} className='flex items-center space-x-2 w-full max-w-md p-8'>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button className='bg-white/40 text-black p-3 ring-1 ring-black/5 transition-opacity duration-300 hover:bg-white' variant="outline">
@@ -121,7 +121,7 @@ const Landing = () => {
                   <img
           src={Image}
           alt="Background Image"
-          className="absolute inset-0 w-full h-full object-cover z-0 filter [blur-1px]"
+          className="absolute inset-0 w-full h-full object-cover z-0 filter blur-xs"
         />
             <Card className="relative border border-transparent">
               <CardHeader>
