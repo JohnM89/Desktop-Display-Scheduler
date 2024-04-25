@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
+// import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Input } from "@/components/ui/input";
 import Image from "@/assets/images/flower.jpg";
 import {
@@ -14,7 +14,7 @@ import {
 import {
   Table,
   TableBody,
-  TableCaption,
+  // TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -82,7 +82,7 @@ const Landing = () => {
 <div className='flex items-center justify-center min-h-screen p-4 bg-gray-100'>
   <div className='relative max-w-4xl w-full bg-white rounded-lg shadow-lg overflow-hidden'>
     <div className='relative z-10 flex flex-col items-center'>
-      <p className='p-8'>⎧ It's {currentDay}! ⎫</p>
+      <p className='p-8'>⎧ It`s {currentDay}! ⎫</p>
       <form onSubmit={updateActivity} className='flex items-center space-x-2 w-full max-w-md'>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -121,7 +121,7 @@ const Landing = () => {
                   <img
           src={Image}
           alt="Background Image"
-          className="absolute inset-0 w-full h-full object-cover z-0 filter blur-sm"
+          className="absolute inset-0 w-full h-full object-cover z-0 filter [blur-1px]"
         />
             <Card className="relative border border-transparent">
               <CardHeader>

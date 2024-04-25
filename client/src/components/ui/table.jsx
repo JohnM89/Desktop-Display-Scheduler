@@ -1,5 +1,5 @@
 import * as React from "react"
-// import PropsTypes from "prop-types"
+import PropsTypes from "prop-types"
 import { cn } from "@/lib/utils"
 
 const Table = React.forwardRef(({ className, ...props }, ref) => (
@@ -72,10 +72,10 @@ const TableCaption = React.forwardRef(({ className, ...props }, ref) => (
 TableCaption.displayName = "TableCaption"
 
 //props
-// Table.propTypes = {
-//   className: PropsTypes.string,
+Table.propTypes = {
+  className: PropsTypes.string,
 
-// }
+}
 
 
 
