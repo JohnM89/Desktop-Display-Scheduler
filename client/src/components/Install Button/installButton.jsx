@@ -4,40 +4,37 @@ import { Button } from "@/components/ui/button";
 const InstallPWA = () => {
   const [promptInstall, setPromptInstall] = useState(null);
 
-  useEffect(() => {
-const handler = (e) => {
-  console.log("Event fired!");
-  e.preventDefault();
-  setPromptInstall(e);
-};
-
-
-    window.addEventListener('beforeinstallprompt', handler);
-
-    return () => window.removeEventListener('beforeinstallprompt', handler);
-  }, []);
-
-  const handleInstallClick = (e) => {
-    if (!promptInstall) {
-      return;
-    }
-    // show the install prompt
-    promptInstall.prompt();
-    // wait for the user to respond to the prompt
-    promptInstall.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the install prompt');
-      } else {
-        console.log('User dismissed the install prompt');
-      }
-      // remove the prompt after install button is clicked
-      setPromptInstall(null);
-    });
+useEffect(() => {
+  const handler = (e) => {
+    console.log("beforeinstallprompt event fired"); // Confirm event firing
+    e.preventDefault(); // Prevent the mini-infobar
+    setPromptInstall(e); // Save the event
   };
+
+  window.addEventListener('beforeinstallprompt', handler);
+
+  return () => {
+    window.removeEventListener('beforeinstallprompt', handler);
+  };
+}, []);
+
+const handleInstallClick = () => {
+  console.log("Install button clicked"); // Log when the button is clicked
+  if (!promptInstall) {
+    console.log("No install prompt available");
+    return;
+  }
+  promptInstall.prompt();
+  promptInstall.userChoice.then((choiceResult) => {
+    console.log(`User choice result: ${choiceResult.outcome}`); // Log the outcome
+    setPromptInstall(null); // Remove the prompt
+  });
+};
 
   return (
     <Button
-      className="install-button z-100 fixed"
+      className="install-button z-100 fixed bottom-0 right-0 m-4"
+
       style={{ visibility: promptInstall ? 'visible' : 'hidden' }}
       onClick={handleInstallClick}
     >
