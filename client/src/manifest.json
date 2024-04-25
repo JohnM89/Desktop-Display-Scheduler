@@ -1,0 +1,22 @@
+{
+    "name": "Desktop Scheduler",
+    "short_name": "DS",
+    "description": "Desktop Scheduler is a simple and easy to use desktop application that allows you to schedule your tasks and events.",
+    "icons": [
+        {
+            "src": "icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#ffffff"
+}

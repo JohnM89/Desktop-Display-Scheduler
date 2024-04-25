@@ -35,7 +35,7 @@ const Landing = () => {
   const [weeklySchedule, setWeeklySchedule] = useState({});
   const [selectedDay, setSelectedDay] = useState(dayjs().format('dddd'));
   const [newActivity, setNewActivity] = useState('');
-  const currentDay = dayjs().format('dddd');
+  // const currentDay = dayjs().format('dddd');
   const { toast } = useToast();
 
   useEffect(() => {
