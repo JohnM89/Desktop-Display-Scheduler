@@ -1,3 +1,5 @@
+import DaySchedule from '../models/schedule.js';
+
 const resolvers = {
   Query: {
     getDaySchedule: async (_, { day }) => await DaySchedule.findOne({ where: { day }, include: 'activities' }),
@@ -13,5 +15,4 @@ const resolvers = {
   }
 };
 
-
-module.exports = resolvers;
+export default resolvers;

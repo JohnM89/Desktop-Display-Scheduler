@@ -1,6 +1,7 @@
 // const { gql } = require('apollo-server');
+// import { gql } from '@apollo/client';
 
-const typeDefs = gql`
+const typeDefs = `
   # Represents a single activity but isn't utilized
   type Activity {
     id: ID!
@@ -33,4 +34,4 @@ const typeDefs = gql`
   }
 `;
 
-module.exports = typeDefs;
+export default typeDefs;
